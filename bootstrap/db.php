@@ -3,7 +3,9 @@
 use \Illuminate\Database\Capsule\Manager as Manager;
 
 
-$dbSettings = $container['settings']['db'];
+if (isset($container)) {
+    $dbSettings = $container['settings']['db'];
+}
 
 switch ($dbSettings['driver']) {
     case 'mysql':
@@ -35,6 +37,10 @@ $capsule->addConnection($dbSettings);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
-$container['db'] = function ($container) use ($capsule) {
-    return $capsule;
-};
+if (isset($container)) {
+    $container['db'] = function ($container) use ($capsule) {
+        return $capsule;
+    };
+}
+
+return $capsule;

@@ -6,15 +6,6 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
-/********************
- * Adding .env vars *
- ********************/
-if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/../');
-    $dotenv->load();
-}
-
-
 /*****************************
  * Initializing app instance *
  *****************************/
