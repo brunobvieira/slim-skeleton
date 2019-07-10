@@ -7,8 +7,8 @@ Include:
 
 Installation
 -------------
+Use composer to install dependencies
  ```
- git clone https://github.com/brunobvieira/slim-skeleton
  composer install
  ```
  
