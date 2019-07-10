@@ -6,16 +6,17 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 
-$config = [
-    'displayErrorDetails' => true
-];
-
-
 /**
  * Initializing app instance
  */
-$app = new Slim\App($config);
+$app = new Slim\App(include __DIR__ . '/../config/config.php');
+$container = $app->getContainer();
 
+
+/**
+ * Initializing db instance
+ */
+require __DIR__ . '/db.php';
 
 /**
  * Requiring the routes files
