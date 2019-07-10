@@ -3,7 +3,7 @@
 /**
  * Requiring the composer autoload
  */
-require __DIR__ . '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 
 $config = [
@@ -20,4 +20,4 @@ $app = new Slim\App($config);
 /**
  * Requiring the routes files
  */
-require __DIR__ . '../app/routes.php';
+require __DIR__ . '/../app/routes.php';
