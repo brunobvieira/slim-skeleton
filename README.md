@@ -1,6 +1,6 @@
 Slim framework skeleton
 ------------------------
-Slim Skeleton app:
+Include:
 - Slim framework
 - .env support (vlucas/phpdotenv)
 - Eloquent orm (illuminate/database)
