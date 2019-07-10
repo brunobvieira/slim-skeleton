@@ -1,6 +1,9 @@
 <?php
 
 
+/**************************
+ * Array of configuration *
+ **************************/
 return [
     'settings' => [
         'displayErrorDetails' => true,
