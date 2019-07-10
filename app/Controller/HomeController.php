@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
     public function index(RequestInterface $req, ResponseInterface $res, $args)
     {
-        $res->getBody()->write('index of HomeController');
+        $res->getBody()->write('Hello World');
         return $res;
     }
 }
