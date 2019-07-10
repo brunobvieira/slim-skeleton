@@ -1,6 +1,6 @@
 <?php
 
-namespace Db\Migration;
+namespace Db\Database;
 
 use Phinx\Migration\AbstractMigration;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -18,11 +18,15 @@ class Migration extends AbstractMigration
      */
     protected $schema;
 
+    /**
+     * Load config and eloquent
+     *  { @inheritDoc }
+     */
     public function init()
     {
-        $config = require __DIR__ . '/../config/config.php';
+        $config = require __DIR__ . '/../../config/config.php';
         $dbSettings = $config['settings']['db'];
-        $capsule = require __DIR__ . '/../bootstrap/db.php';
+        $capsule = require __DIR__ . '/../../bootstrap/db.php';
 
         $this->capsule = $capsule;
         $this->schema = $this->capsule->schema();
