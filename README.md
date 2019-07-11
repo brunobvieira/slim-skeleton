@@ -1,20 +1,20 @@
 # Slim framework skeleton
 
-### Include:
+### Includes:
 - Slim framework [(slimphp/slim)](https://github.com/slimphp/Slim)
 - Eloquent orm [(illuminate/database)](https://github.com/illuminate/database)
 - Phinx migrations [(cakephp/phinx)](https://github.com/cakephp/phinx)
 - .env support [(vlucas/phpdotenv)](https://github.com/vlucas/phpdotenv)
 
 ## Installation
-Use composer to install dependencies.
+Clone and use composer to install the dependencies.
  ```
  composer install
  ```
  
 ## Migrations
 You can write like a [phinx](http://docs.phinx.org/en/latest/migrations.html)
-```
+```php
 <?php
 
 use Db\Database\Migration;
@@ -36,7 +36,7 @@ class MyMigrationPhinx extends Migration
 
 ```
 or as [Laravel](https://laravel.com/docs/5.8/migrations)
-```
+```php
 <?php
 
 use Db\Database\Migration;
