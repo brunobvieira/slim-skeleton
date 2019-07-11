@@ -26,7 +26,7 @@ class MyMigrationPhinx extends Migration
      */
     public function change()
     {
-        $test = $this->table('test');
+        $test = $this->table('tests');
         $test
             ->addColumn('name', 'string', ['limit' => 100])
             ->addTimestamps()
@@ -46,16 +46,16 @@ class MyMigrationEloquent extends Migration
 {
     public function up()
     {
-        $this->schema->create('test', function (Blueprint $builder) {
+        $this->schema->create('tests', function (Blueprint $builder) {
             $builder->bigIncrements('id');
-            $builder->string('name');
+            $builder->string('name', 100);
             $builder->timestamps();
         });
     }
 
     public function down()
     {
-        $this->schema->drop('flights');
+        $this->schema->drop('tests');
     }
 }
 ```
