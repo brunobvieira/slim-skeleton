@@ -8,7 +8,7 @@ return [
         'migrations' => '%%PHINX_CONFIG_DIR%%/db/migrations',
         'seeds' => '%%PHINX_CONFIG_DIR%%/db/seeds'
     ],
-    'migration_base_class' => 'Db\Migration',
+    'migration_base_class' => 'Db\Database\Migration',
     'environments' => [
         'default_migration_table' => 'migrations',
         'default_database' => 'default',
