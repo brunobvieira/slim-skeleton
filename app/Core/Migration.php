@@ -1,6 +1,6 @@
 <?php
 
-namespace Db\Database;
+namespace App\Core;
 
 use Phinx\Migration\AbstractMigration;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -24,7 +24,7 @@ class Migration extends AbstractMigration
      */
     public function init()
     {
-        $config = require __DIR__ . '/../../config/config.php';
+        $config = require __DIR__ . '/../../app/config/config.php';
         $dbSettings = $config['settings']['db'];
         $capsule = require __DIR__ . '/../../bootstrap/db.php';
 

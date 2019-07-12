@@ -1,6 +1,6 @@
 <?php
 
-$config = require __DIR__ . '/config/config.php';
+$config = require __DIR__ . '/app/config/config.php';
 $dbSettings = $config['settings']['db'];
 
 return [
@@ -8,7 +8,7 @@ return [
         'migrations' => '%%PHINX_CONFIG_DIR%%/db/migrations',
         'seeds' => '%%PHINX_CONFIG_DIR%%/db/seeds'
     ],
-    'migration_base_class' => 'Db\Database\Migration',
+    'migration_base_class' => 'App\Core\Migration',
     'environments' => [
         'default_migration_table' => 'migrations',
         'default_database' => 'default',

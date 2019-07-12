@@ -25,7 +25,7 @@ require_once __DIR__ . '/../bootstrap/functions.php';
 
 
 // Instantiate the app
-$config = include __DIR__ . '/../config/config.php';
+$config = include __DIR__ . '/../app/config/config.php';
 $app = new Slim\App($config);
 
 

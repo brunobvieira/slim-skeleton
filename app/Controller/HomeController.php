@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 
+use App\Core\Controller;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
