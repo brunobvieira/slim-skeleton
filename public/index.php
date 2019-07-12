@@ -16,12 +16,13 @@ if (PHP_SAPI == 'cli-server') {
 require __DIR__ . '/../vendor/autoload.php';
 
 
+//Start session
 session_start();
 
 
 // Declare public functions
 require_once __DIR__ . '/../bootstrap/functions.php';
-debug_r(['asd' => 'asdasd', 'teasdasd' => 1, 'asdasdq' => [1, 2, 3, 4]], d);
+
 
 // Instantiate the app
 $config = include __DIR__ . '/../config/config.php';
