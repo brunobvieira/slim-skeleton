@@ -17,8 +17,7 @@ function debug_r()
 			<label>
 				Line --> <span>' . $trace['line'] . '</span><br>
 				File --> <span>' . $trace['file'] . '</span><br>
-			</label>
-		</div>';
+			</label>';
 
     echo '<pre style="white-space: pre-wrap;">';
 
@@ -31,7 +30,7 @@ function debug_r()
 
     }
 
-    echo '</pre>';
+    echo '</pre></div>';
 
     if ($stop) {
         die;
