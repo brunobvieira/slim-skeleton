@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use Illuminate\Database\Capsule\Manager as Manager;
 use Phinx\Migration\AbstractMigration;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Schema\Builder as Schema;
@@ -25,8 +26,11 @@ class Migration extends AbstractMigration
     public function init()
     {
         $config = require __DIR__ . '/../../app/config/config.php';
-        $dbSettings = $config['settings']['db'];
-        $capsule = require __DIR__ . '/../../bootstrap/db.php';
+
+        $capsule = new Manager();
+        $capsule->addConnection($config['settings']['db']);
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
 
         $this->capsule = $capsule;
         $this->schema = $this->capsule->schema();
