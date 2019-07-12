@@ -19,7 +19,7 @@ class Migration extends AbstractMigration
     protected $schema;
 
     /**
-     * Load config and eloquent
+     * Load and config eloquent
      *  { @inheritDoc }
      */
     public function init()

@@ -23,7 +23,11 @@ return [
             'username' => getenv('DB_USERNAME') ?: 'root',
             'password' => getenv('DB_PASSWORD') ?: 'root',
             'port' => getenv('DB_PORT') ?: '3306',
-            'charset' =>  getenv('DB_CHARSET') ?: 'utf8',
+            'charset' => getenv('DB_CHARSET') ?: 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true
         ]
     ]
 ];
