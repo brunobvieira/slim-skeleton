@@ -1,17 +1,12 @@
 <?php
 
-/********************
- * Adding .env vars *
- ********************/
-
+// Load .env values
 if (file_exists(__DIR__ . '/../.env')) {
     $dotenv = Dotenv\Dotenv::create(__DIR__ . '/../');
     $dotenv->load();
 }
 
-/**************************
- * Array of configuration *
- **************************/
+// Configuration values
 return [
     'settings' => [
         'displayErrorDetails' => true,

@@ -1,25 +1,10 @@
 <?php
 
-/***********************************
- * Requiring the composer autoload *
- ***********************************/
-require __DIR__ . '/../vendor/autoload.php';
-
-
-/*****************************
- * Initializing app instance *
- *****************************/
-$app = new Slim\App(include __DIR__ . '/../config/config.php');
 $container = $app->getContainer();
 
-
-/****************************
- * Initializing db instance *
- ****************************/
+// Instantiate the database
 require __DIR__ . '/db.php';
 
 
-/******************************
- * Requiring the routes files *
- ******************************/
+// Declaring Routes
 require __DIR__ . '/../app/routes.php';
