@@ -5,14 +5,21 @@ namespace App\Controller;
 
 
 use App\Core\Controller;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Slim\Http\Request;
+use Slim\Http\Response;
 
 class HomeController extends Controller
 {
-    public function index(RequestInterface $req, ResponseInterface $res, $args)
+    /**
+     * Hello world
+     *
+     * @param Request $req
+     * @param Response $res
+     * @return Response
+     */
+    public function helloWorld(Request $req, Response $res)
     {
-        $res->getBody()->write('Hello World');
-        return $res;
+        $params = $req->getQueryParams();
+        return $res->withJson(['hello' => 'Hello World', 'params' => $params]);
     }
 }

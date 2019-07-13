@@ -1,23 +1,20 @@
 <?php
 
+
 namespace App\Core;
 
-use Illuminate\Database\Capsule\Manager as Manager;
-use Phinx\Migration\AbstractMigration;
-use Illuminate\Database\Capsule\Manager as Capsule;
-use Illuminate\Database\Schema\Builder as Schema;
 
-class Migration extends AbstractMigration
+use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as Manager;
+use Illuminate\Database\Schema\Builder as Schema;
+use Phinx\Seed\AbstractSeed;
+
+class Seeder extends AbstractSeed
 {
     /**
      * @var Capsule
      */
     protected $capsule;
-
-    /**
-     * @var Schema
-     */
-    protected $schema;
 
     /**
      * Load and config eloquent
@@ -33,7 +30,5 @@ class Migration extends AbstractMigration
         $capsule->bootEloquent();
 
         $this->capsule = $capsule;
-        $this->schema = $this->capsule->schema();
-
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
 // Load .env values
-if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/../');
+if (file_exists(__DIR__ . '/../../.env')) {
+    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/../../');
     $dotenv->load();
 }
 
