@@ -62,6 +62,11 @@ class UserController extends Controller
             'description'
         ]);
 
+        $params['born_at'] = isset($params['born_at']) && !empty($params['born_at'])
+            ? $params['description'] : null;
+        $params['description'] = isset($params['description']) && !empty($params['description'])
+            ? $params['description'] : null;
+
         $validation = User::validate($params);
         if (!$validation['isValid']) {
 
@@ -111,7 +116,11 @@ class UserController extends Controller
                 ->withJson($validation['messages']);
         }
 
-        $params['born_at'] = $params['born_at'] ?: null;
+        $params['born_at'] = isset($params['born_at']) && !empty($params['born_at'])
+            ? $params['description'] : null;
+        $params['description'] = isset($params['description']) && !empty($params['description'])
+            ? $params['description'] : null;
+
         $user->fill($params);
         $user->save();
 
