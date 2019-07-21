@@ -2,9 +2,8 @@
 
 ### Includes:
 - Slim framework [(slimphp/slim)](https://github.com/slimphp/Slim)
-- Eloquent orm [(illuminate/database)](https://github.com/illuminate/database)
+- Mongodb support [(jenssegers/mongodb)](https://github.com/jenssegers/laravel-mongodb)
 - .env support [(vlucas/phpdotenv)](https://github.com/vlucas/phpdotenv)
-- Mongodb support
 
 ## Installation
 Clone and use composer to install the dependencies.
