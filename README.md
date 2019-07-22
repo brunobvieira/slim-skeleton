@@ -12,5 +12,5 @@ Clone and use composer to install the dependencies.
  ```
  
 ## Migrations
-See the branch [with-migrations](https://github.com/brunobvieira/slim-skeleton/tree/with-migrations)
+See the branch [with-migrations](https://github.com/brunobvieira/slim-skeleton/tree/with-migrations)  
 See the branch [with-mongodb](https://github.com/brunobvieira/slim-skeleton/tree/with-mongodb)
