@@ -12,15 +12,17 @@ return [
         'displayErrorDetails' => true,
         'secretKey' => getenv('SECRET_KEY') ?: 'secret_key',
         'db' => [
-            'driver' => 'mongodb',
-            'host' => getenv('DB_HOST') ?: 'locahost',
-            'port' => getenv('DB_PORT') ?: '27017',
-            'database' => getenv('DB_DATABASE') ?: 'default',
+            'driver' => getenv('DB_DRIVER') ?: 'mysql',
+            'host' => getenv('DB_HOST') ?: 'localhost',
+            'database' => getenv('DB_DATABASE') ?: 'default_db',
             'username' => getenv('DB_USERNAME') ?: 'root',
             'password' => getenv('DB_PASSWORD') ?: 'root',
-            'options' => [
-                'database' => 'admin'
-            ]
+            'port' => getenv('DB_PORT') ?: '3306',
+            'charset' => getenv('DB_CHARSET') ?: 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true
         ]
     ]
 ];

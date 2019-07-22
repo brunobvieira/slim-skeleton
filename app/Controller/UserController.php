@@ -54,18 +54,19 @@ class UserController extends Controller
      */
     public function saveAction(Request $req, Response $res)
     {
-        $params = $req->getParams([
+        $paramsNames = [
             'name',
             'email',
             'password',
             'born_at',
             'description'
-        ]);
+        ];
 
-        $params['born_at'] = isset($params['born_at']) && !empty($params['born_at'])
-            ? $params['description'] : null;
-        $params['description'] = isset($params['description']) && !empty($params['description'])
-            ? $params['description'] : null;
+        $reqParams = $req->getParams($paramsNames);
+        $params =  [];
+        foreach ($paramsNames as $paramName) {
+            $params[$paramName] = isset($reqParams[$paramName]) ? $reqParams[$paramName] : null;
+        }
 
         $validation = User::validate($params);
         if (!$validation['isValid']) {
@@ -114,11 +115,6 @@ class UserController extends Controller
                 StatusCode::HTTP_BAD_REQUEST)
                 ->withJson($validation['messages']);
         }
-
-        $params['born_at'] = isset($params['born_at']) && !empty($params['born_at'])
-            ? $params['description'] : null;
-        $params['description'] = isset($params['description']) && !empty($params['description'])
-            ? $params['description'] : null;
 
         $user->fill($params);
         $user->save();

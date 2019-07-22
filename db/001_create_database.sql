@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS default_db CHAR SET UTF8 COLLATE utf8_unicode_ci;
+USE default_db;
+
+CREATE TABLE users
+(
+	id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	password TEXT NOT NULL,
+	born_at DATE NULL,
+	description VARCHAR(200) NULL,
+	created_at TIMESTAMP NULL,
+	updated_at TIMESTAMP NULL
+);

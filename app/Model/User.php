@@ -6,7 +6,7 @@ namespace App\Model;
 
 use App\Core\Traits\ModelValidation;
 use App\Core\Validation\Validator;
-use Jenssegers\Mongodb\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
